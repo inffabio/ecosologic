@@ -8,10 +8,14 @@
 
 <div ng-controller="CtrlFormOrcamento">
 
+
     <h3 class="center-align">Peça já seu orçamento, é rápido e sem compromisso!</h3>
 
     <div class="row">
+
+   
         <form name="FormPedidoOrcamento" class="col s6">
+            <div ng-if="resposta==false">
             <div class="col s12">
                 <h5 class="center-align">Preencha o formulário</h5>
             </div>
@@ -52,7 +56,7 @@
                         <option value="4">Entre R$ 500 e R$ 600 </option>
                         <option value="5">Entre R$ 600 e R$ 700 </option>
                         <option value="6">Entre R$ 700 e R$ 800 </option>
-                        <option value="7">Entre R$ 900 e R$ 1000 </option>
+                        <option   value="7">Entre R$ 900 e R$ 1000 </option>
                         <option value="8">Acima de R$ 1000 </option>
                     </select>
                     <label> Média mensal da conta de luz</label>
@@ -66,7 +70,27 @@
                     <button class="waves-effect waves-light btn col s12" ng-click="gravarPedidoOrcamento()">Enviar pedido de orçamento</button>
                 </div>
             </div>
+            </div>
+                <div ng-if="resposta==true">
+                    <div class="container">
+                        <div class="valign-wrapper">
+                            <div class="col s12">
+
+                                <div class="center-align grey-text text-darken-1">
+                                    <h4>Seu pedido de orçamento foi enviado.</h4>
+                                    <br />
+                                    <h5>Você estará recebendo o seu orçamento de acordo com o nível de consumo elétrico informado.</h5>
+                                    <br />
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+               </div>
         </form>
+    
+
+       
         <div class="col s6">
             <blockquote>
                 <strong>
@@ -75,7 +99,7 @@
                     Não esqueça de colocar o DDD no telefone,
                     <br />
                     Não esqueça também de selecionar a média mensal de conta de luz.</strong>
-</blockquote>
+             </blockquote>
         
         </div>
         <div class="col s6">

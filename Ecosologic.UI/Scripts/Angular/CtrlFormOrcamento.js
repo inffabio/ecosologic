@@ -6,7 +6,7 @@
         $scope.ListUF = [];
         $scope.msgWarning = false;
         $scope.msgSuccess = false;
-
+        $scope.resposta = false;
         //Cria Estrutura
         PedidoOrcamentoServico.GetEstruturaOrcamento()
         .then(function (_estruturaOrcamento) {
@@ -30,7 +30,7 @@
                 PedidoOrcamentoServico.GravarPedidoOrcamento($scope.orcamento)
                 .then(function (_OrcamentoResultado) {
 
-
+                    $scope.resposta = true;
 
                 }, function (data) {
                     console.log("Erro ao Gravar pedido de orçamento");
