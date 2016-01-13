@@ -6,91 +6,91 @@
 <script src="~/Scripts/Angular/CtrlFormOrcamento.js"></script>
 <script src="~/Scripts/Angular/FactoryPedidoOrcamento.js"></script>
 
-<div ng-controller="CtrlFormOrcamento">
+<div ng-controller="CtrlFormOrcamento" ng-init="InicializaResposta()">
 
 
     <h3 class="center-align">Peça já seu orçamento, é rápido e sem compromisso!</h3>
 
     <div class="row">
 
-   
+
         <form name="FormPedidoOrcamento" class="col s6">
             <div ng-if="resposta==false">
-            <div class="col s12">
-                <h5 class="center-align">Preencha o formulário</h5>
-            </div>
-            <div class="row">
-                <div input-field class="col s6">
-                    <input name="nome" type="text" class="validate" ng-model="orcamento.Nome" required>
-                    <label for="nome">Nome</label>
-                </div>
-               
-                <div input-field class="col s6">
-                    <input id="Email" type="email" class="validate" ng-model="orcamento.Email" required>
-                    <label for="Email">E-mail</label>
-                </div>
-                <div input-field  class="col s6">
-                    <input id="Telefone_Fixo" type="text" class="validate" ng-model="orcamento.Telefone" required>
-                    <label for="first_name">Telefone Fixo</label>
-                </div>
-                <div input-field class="col s6">
-                    <input id="Celular" type="text" class="validate" ng-model="orcamento.Celular" required>
-                    <label for=" celular">Celular</label>
-                </div>
-                <div input-field class="col s6">
-                    <input id="Cidade" type="text" class="validate" ng-model="orcamento.Cidade" required>
-                    <label for="Cidade">Cidade</label>
-                </div>
-                <div class="input-field col s6" style="z-index:3">
-                    <select material-select name="Estado" id="UF" ng-options="uf.Descricao for uf in orcamento.ListUF track by uf.UFId" ng-model="orcamento.UFSelecionado">
-                        <option value="" selected>Selecione o Estado</option>
-                    </select>
-                    <label>Estado</label>
-                </div>
-                <div class="input-field col s12" style="z-index:2" required>
-                    <select material-select ng-model="orcamento.MediaContaLuz" >
-                        <option value="" selected>Média mensal da conta de luz</option>
-                        <option value="1">Entre R$ 200 e R$ 300 </option>
-                        <option value="2">Entre R$ 300 e R$ 400 </option>
-                        <option value="3">Entre R$ 400 e R$ 500 </option>
-                        <option value="4">Entre R$ 500 e R$ 600 </option>
-                        <option value="5">Entre R$ 600 e R$ 700 </option>
-                        <option value="6">Entre R$ 700 e R$ 800 </option>
-                        <option   value="7">Entre R$ 900 e R$ 1000 </option>
-                        <option value="8">Acima de R$ 1000 </option>
-                    </select>
-                    <label> Média mensal da conta de luz</label>
-                </div>
-                
-                <div class="input-field col s12">
-                    <textarea id="textarea1" class="materialize-textarea" materialize-textarea ng-model="orcamento.Duvidas"></textarea>
-                    <label for="textarea1">Dúvidas</label>
-                </div>
                 <div class="col s12">
-                    <button class="waves-effect waves-light btn col s12" ng-click="gravarPedidoOrcamento()">Enviar pedido de orçamento</button>
+                    <h5 class="center-align">Preencha o formulário</h5>
+                </div>
+                <div class="row">
+                    <div input-field class="col s6">
+                        <input name="nome" type="text" class="validate" ng-model="orcamento.Nome" required>
+                        <label for="nome">Nome</label>
+                    </div>
+
+                    <div input-field class="col s6">
+                        <input id="Email" type="email" class="validate" ng-model="orcamento.Email" required>
+                        <label for="Email">E-mail</label>
+                    </div>
+                    <div input-field class="col s6">
+                        <input id="Telefone_Fixo" type="text" class="validate" ng-model="orcamento.Telefone" required>
+                        <label for="first_name">Telefone Fixo</label>
+                    </div>
+                    <div input-field class="col s6">
+                        <input id="Celular" type="text" class="validate" ng-model="orcamento.Celular" required>
+                        <label for=" celular">Celular</label>
+                    </div>
+                    <div input-field class="col s6">
+                        <input id="Cidade" type="text" class="validate" ng-model="orcamento.Cidade" required>
+                        <label for="Cidade">Cidade</label>
+                    </div>
+                    <div class="input-field col s6" style="z-index:3">
+                        <select material-select name="Estado" id="UF" ng-options="uf.Descricao for uf in orcamento.ListUF track by uf.UFId" ng-model="orcamento.UFSelecionado">
+                            <option value="" selected>Selecione o Estado</option>
+                        </select>
+                        <label>Estado</label>
+                    </div>
+                    <div class="input-field col s12" style="z-index:2" required>
+                        <select material-select ng-model="orcamento.MediaContaLuz">
+                            <option value="" selected>Média mensal da conta de luz</option>
+                            <option value="1">Entre R$ 200 e R$ 300 </option>
+                            <option value="2">Entre R$ 300 e R$ 400 </option>
+                            <option value="3">Entre R$ 400 e R$ 500 </option>
+                            <option value="4">Entre R$ 500 e R$ 600 </option>
+                            <option value="5">Entre R$ 600 e R$ 700 </option>
+                            <option value="6">Entre R$ 700 e R$ 800 </option>
+                            <option value="7">Entre R$ 900 e R$ 1000 </option>
+                            <option value="8">Acima de R$ 1000 </option>
+                        </select>
+                        <label> Média mensal da conta de luz</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea" materialize-textarea ng-model="orcamento.Duvidas"></textarea>
+                        <label for="textarea1">Dúvidas</label>
+                    </div>
+                    <div class="col s12">
+                        <button class="waves-effect waves-light btn col s12" ng-click="gravarPedidoOrcamento()">Enviar pedido de orçamento</button>
+                    </div>
                 </div>
             </div>
-            </div>
-                <div ng-if="resposta==true">
-                    <div class="container">
-                        <div class="valign-wrapper">
-                            <div class="col s12">
+            <div ng-if="resposta==true">
+                <div class="container">
+                    <div class="valign-wrapper">
+                        <div class="col s12">
 
-                                <div class="center-align grey-text text-darken-1">
-                                    <h4>Seu pedido de orçamento foi enviado.</h4>
-                                    <br />
-                                    <h5>Você estará recebendo o seu orçamento de acordo com o nível de consumo elétrico informado.</h5>
-                                    <br />
-                                </div>
-
+                            <div class="center-align grey-text text-darken-1">
+                                <h4>Seu pedido de orçamento foi enviado.</h4>
+                                <br />
+                                <h5>Você estará recebendo o seu orçamento de acordo com o nível de consumo elétrico informado.</h5>
+                                <br />
                             </div>
+
                         </div>
                     </div>
-               </div>
+                </div>
+            </div>
         </form>
-    
 
-       
+
+
         <div class="col s6">
             <blockquote>
                 <strong>
@@ -98,9 +98,10 @@
                     <br />
                     Não esqueça de colocar o DDD no telefone,
                     <br />
-                    Não esqueça também de selecionar a média mensal de conta de luz.</strong>
-             </blockquote>
-        
+                    Não esqueça também de selecionar a média mensal de conta de luz.
+                </strong>
+            </blockquote>
+
         </div>
         <div class="col s6">
             <center>

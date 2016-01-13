@@ -22,7 +22,9 @@
             console.log("Erro criando estrutura CadastoCursoFormacaoDTO");
 
         });
+        $scope.inicializaResposta = function () {
 
+        }
 
         $scope.gravarPedidoOrcamento = function () {
            
