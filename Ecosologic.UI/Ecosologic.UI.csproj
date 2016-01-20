@@ -162,11 +162,7 @@
     <Content Include="images\marcador3.png" />
     <Content Include="images\marcador4.png" />
     <Content Include="images\marcador5.png" />
-    <Content Include="images\pig.png" />
-    <Content Include="images\praia.png" />
     <Content Include="images\projeto-solar.png" />
-    <Content Include="images\solar.png" />
-    <Content Include="images\susten.png" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-sanitize.js" />
     <Content Include="Scripts\Angular\AppGlobal.js" />
@@ -279,6 +275,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Orcamento.cshtml" />
     <Content Include="Views\Home\Faq.cshtml" />
+    <Content Include="Views\Home\QuemSomos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

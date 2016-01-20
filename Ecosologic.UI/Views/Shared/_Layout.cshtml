@@ -33,12 +33,13 @@
 
             <a href="@Url.Action("Index", "Home")" style="margin-left:10px; margin-top:5px" class="brand-logo"><img height="65" src="~/images/logo-branca.png"> </a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="#!">Quem Somos</a></li>
+                <li>@Html.ActionLink("Quem somos", "QuemSomos", "Home")</li>
                 <li>@Html.ActionLink("Dúvidas Frequentes", "Faq", "Home")</li>
                 <li>@Html.ActionLink("Faça um orçamento", "Orcamento", "Home")</li>
             </ul>
             <ul id="slide-out" class="side-nav">
                 <li><a href="#!">Quem Somos</a></li>
+                <li>@Html.ActionLink("Quem somos", "QuemSomos", "Home")</li>
                 <li>@Html.ActionLink("Dúvidas Frequentes", "Faq", "Home")</li>
                 <li>@Html.ActionLink("Faça um orçamento", "Orcamento", "Home")</li>
             </ul>

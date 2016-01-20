@@ -24,6 +24,11 @@ namespace Ecosologic.UI.Controllers
             return View();
         }
 
+        public ActionResult QuemSomos()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult GetEstruturaOrcamento()
         {
