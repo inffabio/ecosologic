@@ -126,6 +126,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601211352500_inicial.cs" />
+    <Compile Include="Migrations\201601211352500_inicial.Designer.cs">
+      <DependentUpon>201601211352500_inicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\UF.cs" />
     <Compile Include="Models\PedidoOrcamento.cs" />
@@ -146,6 +150,9 @@
     <Content Include="Content\materialize\font\material-design-icons\LICENSE.txt" />
     <Content Include="Content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Content\materialize\font\Open_Sans_Condensed\LICENSE.txt" />
+    <Content Include="Content\ui-grid.css" />
+    <Content Include="Content\ui-grid.min.css" />
+    <Content Include="Content\ui-grid.svg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="images\casa12.jpg" />
@@ -186,8 +193,11 @@
     <Content Include="Scripts\Angular\BibliotecaAngular\ui-bootstrap.js" />
     <Content Include="Scripts\Angular\BibliotecaAngular\ui-grid.min.js" />
     <Content Include="Scripts\Angular\BibliotecaAngular\vfs_fonts.js" />
+    <Content Include="Scripts\Angular\CtrlAnalisePedidoOrcamento.js" />
     <Content Include="Scripts\Angular\CtrlFormOrcamento.js" />
     <Content Include="Scripts\Angular\FactoryPedidoOrcamento.js" />
+    <Content Include="Scripts\Angular\i18n\grid\pt-br.js" />
+    <Content Include="Scripts\Angular\i18n\grid\ui-i18n.js" />
     <Content Include="Scripts\Angular\UI\ui-utils.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -245,6 +255,13 @@
     <Content Include="Content\materialize\font\Muli\Muli-Light.ttf" />
     <Content Include="Content\materialize\font\Muli\Muli-LightItalic.ttf" />
     <Content Include="Content\materialize\font\Muli\Muli-Regular.ttf" />
+    <Content Include="Content\ui-grid.eot" />
+    <Content Include="Content\ui-grid.ttf" />
+    <Content Include="Content\ui-grid.woff" />
+    <None Include="Properties\PublishProfiles\ecosologic %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\ecosologic %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\ecosologic - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ecosologic - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ecosologic.pubxml" />
     <None Include="Properties\PublishProfiles\EcosologicPublishProfile.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
@@ -276,10 +293,16 @@
     <Content Include="Views\Home\Orcamento.cshtml" />
     <Content Include="Views\Home\Faq.cshtml" />
     <Content Include="Views\Home\QuemSomos.cshtml" />
+    <Content Include="Views\Home\AnalisePedidoOrcamento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201601211352500_inicial.resx">
+      <DependentUpon>201601211352500_inicial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

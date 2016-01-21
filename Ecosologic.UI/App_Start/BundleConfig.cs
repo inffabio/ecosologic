@@ -47,7 +47,8 @@ namespace Ecosologic.UI
             bundles.Add(new StyleBundle("~/Content/angular/css").Include(
                 "~/Content/loading-bar.css",
                 "~/Content/angucomplete-alt.css",
-                "~/Content/dialogs.css"
+                "~/Content/dialogs.css",
+                "~/Content/ui-grid.min.css"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

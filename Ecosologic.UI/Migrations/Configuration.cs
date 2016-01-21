@@ -10,7 +10,7 @@ namespace Ecosologic.UI.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(Ecosologic.UI.EcoSolContexto context)
@@ -55,6 +55,7 @@ namespace Ecosologic.UI.Migrations
             context.UFS.Add(new UF { Sigla = "SP", Descricao = "São Paulo" });
             context.UFS.Add(new UF { Sigla = "SE", Descricao = "Sergipe" });
             context.UFS.Add(new UF { Sigla = "TO", Descricao = "Tocantins" });
+
         }
     }
 }

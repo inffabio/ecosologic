@@ -19,7 +19,7 @@
 
              $scope.orcamento.UFSelecionado =  _estruturaOrcamento.ListUF[_index];
         }, function (data) {
-            console.log("Erro criando estrutura CadastoCursoFormacaoDTO");
+            console.log("Erro criando estrutura inicial Orçamento");
 
         });
         $scope.inicializaResposta = function () {

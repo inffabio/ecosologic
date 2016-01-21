@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Ecosologic";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/Angular/CtrlAnalisePedidoOrcamento.js"></script>
+<script src="~/Scripts/Angular/FactoryPedidoOrcamento.js"></script>
+
+<div ng-controller="CtrlAnalisePedidoOrcamento">
+    <div class="container">
+
+        <div class="row">
+            <div class="col s12 ">
+                <h3> Pedidos de Orçamento </h3>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col s12 ">
+                <div ui-grid="gridPedidosOrcamento"
+                     ui-grid-selection
+                     ui-grid-pagination
+                     ui-grid-exporter
+                     ui-grid-move-columns
+                     class="uiGrid"></div>
+            </div>
+        </div>
+
+    </div>
+</div>

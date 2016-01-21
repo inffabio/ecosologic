@@ -4,8 +4,8 @@
         {
             EstruturaOrcamento: {},
             GetEstruturaOrcamento: GetEstruturaOrcamento,
-            GravarPedidoOrcamento: GravarPedidoOrcamento
-            
+            GravarPedidoOrcamento: GravarPedidoOrcamento,
+            GetListaPedidosOrcamento: GetListaPedidosOrcamento
 
         };
 
@@ -44,5 +44,20 @@
         return def.promise;
     };
 
+    function GetListaPedidosOrcamento() {
+        var _url = "http://" + $location.host() + ":" + $location.port() + "/";
+        _url += "Home/GetListaPedidosOrcamento/";
+        var def = $q.defer();
+        $http.post(_url)
+        .success(function (data) {
+
+            def.resolve(data);
+        })
+        .error(function () {
+            def.reject("Erro ao Listar Pedidos de Orçamento");
+        });
+
+        return def.promise;
+    };
       
 }]);
