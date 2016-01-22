@@ -123,6 +123,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Contexto.cs" />
+    <Compile Include="DescriptionEnum.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -131,6 +132,7 @@
       <DependentUpon>201601211352500_inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\MediaContaLuz.cs" />
     <Compile Include="Models\UF.cs" />
     <Compile Include="Models\PedidoOrcamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

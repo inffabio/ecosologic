@@ -43,9 +43,7 @@ namespace Ecosologic.UI.Controllers
             List<UF> _listuf = _contexto.UFS.Where(x => !String.IsNullOrEmpty(x.Descricao)).ToList();
             _pedidoOrcamento.ListUF = _listuf;
 
-            //List<UF> _listuf = new List<UF>();
-            //_listuf.Add(new UF { Descricao = "Rio de Janeiro", Sigla = "RJ", UFId = 1 });
-            //_pedidoOrcamento.ListUF = _listuf;
+           
 
             return Json(_pedidoOrcamento);
         }
@@ -68,12 +66,19 @@ namespace Ecosologic.UI.Controllers
           public ActionResult GetListaPedidosOrcamento()
           {
               EcoSolContexto _contexto = new EcoSolContexto();
+               DescriptionEnum _getDescriptionEnum = new DescriptionEnum();
 
               List<PedidoOrcamento> _listPedidoOrcamento = new List<PedidoOrcamento>();
 
               _listPedidoOrcamento = (from lst in _contexto.PedidosOrcamento select lst).ToList();
 
-              return Json(_listPedidoOrcamento);
+              for (int i = 0; i <= _listPedidoOrcamento.Count - 1; i++ )
+              {
+                MediaContaLuz  EnumMediaContaLuz = (MediaContaLuz)Enum.ToObject(typeof(MediaContaLuz),Convert.ToInt32( _listPedidoOrcamento[i].MediaContaLuz));
+                _listPedidoOrcamento[i].MediaContaLuz = _getDescriptionEnum.GetDescription(EnumMediaContaLuz);
+              }
+
+                  return Json(_listPedidoOrcamento);
           }
     }
 }

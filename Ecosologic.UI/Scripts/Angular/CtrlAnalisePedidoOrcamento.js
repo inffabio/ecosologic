@@ -32,13 +32,13 @@
           {
               name: 'Nome',
               displayName: 'Nome',
-              width: '10%',
+              width: '20%',
               enableColumnMenu: false
           },
           {
               name: 'Email',
               displayName: 'Email',
-              width: '10%',
+              width: '20%',
               enableColumnMenu: false
           },
           {
@@ -66,9 +66,9 @@
               enableColumnMenu: false
           },
           {
-              name: ' MediaContaLuz',
-              displayName: ' MediaContaLuz',
-              width: '10%',
+              name: 'MediaContaLuz',
+              displayName: 'MediaContaLuz',
+              width: '15%',
               enableColumnMenu: false
           },
           {
@@ -80,7 +80,7 @@
           {
               name: 'DataPedido',
               displayName: 'DataPedido',
-              width: '10%',
+              width: '20%',
               enableColumnMenu: false
           },
 
@@ -90,10 +90,24 @@
         PedidoOrcamentoServico.GetListaPedidosOrcamento()
      .then(function (_listaPedidosOrcamento) {
 
+         $.each(_listaPedidosOrcamento, function (index, value) {
+             value.DataPedido = CovertJsonDatetoDate(value.DataPedido);
+             value.DataPedido = new Date(value.DataPedido);
+             var _databr = value.DataPedido.getDate() + "\\" +  value.DataPedido.getMonth() + 1 + "\\" + value.DataPedido.getFullYear();
+             value.DataPedido = _databr;
+         });
+        
+
          $scope.gridPedidosOrcamento.data = _listaPedidosOrcamento;
      }, function (data) {
          console.log("Erro buscando lista de Orcamentos");
      });
+
+        function CovertJsonDatetoDate( _jsonDate)
+        {
+
+          return new Date(parseInt(_jsonDate.substr(6)));
+        }
 
 }]);
 
