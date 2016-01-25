@@ -1,6 +1,6 @@
-﻿appGlobal.controller('CtrlAnalisePedidoOrcamento', ['$scope', 'uiGridConstants', 'i18nService', 'PedidoOrcamentoServico', 
+﻿appGlobal.controller('CtrlAnalisePedidoOrcamento', ['$scope', 'ModalServico', 'uiGridConstants', 'i18nService', 'PedidoOrcamentoServico', 
                                            
-    function ($scope, uiGridConstants, i18nService, PedidoOrcamentoServico) {
+    function ($scope, ModalServico, uiGridConstants, i18nService, PedidoOrcamentoServico) {
 
         i18nService.setCurrentLang('pt-br');
 
@@ -73,10 +73,12 @@
           },
           {
               name: 'Duvidas',
-              displayName: '  Duvidas',
-              width: '10%',
-              enableColumnMenu: false
+              displayName: 'Dúvidas',
+              width: '8%',
+              enableColumnMenu: false,
+              cellTemplate: '<div class="ui-grid-cell-contents center-align" ><a href"#" ng-click="grid.appScope.OpenModalDados(row.entity.Duvidas)">...</a></div>'
           },
+         
           {
               name: 'DataPedido',
               displayName: 'DataPedido',
@@ -93,12 +95,13 @@
          $.each(_listaPedidosOrcamento, function (index, value) {
              value.DataPedido = CovertJsonDatetoDate(value.DataPedido);
              value.DataPedido = new Date(value.DataPedido);
-             var _databr = value.DataPedido.getDate() + "\\" +  value.DataPedido.getMonth() + 1 + "\\" + value.DataPedido.getFullYear();
+             var _databr = value.DataPedido.getDate() + "\\" +  value.DataPedido.getMonth() + 1 + "\\" + value.DataPedido.getFullYear() + " " + value.DataPedido.getHours() + ":" + value.DataPedido.getMinutes();
              value.DataPedido = _databr;
          });
         
 
          $scope.gridPedidosOrcamento.data = _listaPedidosOrcamento;
+
      }, function (data) {
          console.log("Erro buscando lista de Orcamentos");
      });
@@ -109,5 +112,32 @@
           return new Date(parseInt(_jsonDate.substr(6)));
         }
 
+        $scope.InicioDuvida = function (valor) {
+
+            var _indexEspaco = valor.indexOf(" ");
+            if (_indexEspaco != -1)
+                valor = valor.substring(0, _indexEspaco);
+            else
+                valor = "...";
+
+            return valor;
+        }
+
+        $scope.OpenModalDados = function (valor) {
+            var _items = [];
+            _items.push(valor);
+          
+            ModalServico.OpenModalDados("ModalConteudoDuvida", "sm", "ctrlShowDuvidas", _items);
+        }
+
+    }]);
+
+appGlobal.controller('ctrlShowDuvidas', ['$scope', '$uibModalInstance', 'items', function ($scope, $uibModalInstance, items) {
+
+    $scope.Duvidas = items[0];
+
+    $scope.fechar = function () {
+        $uibModalInstance.close();
+    }
 }]);
 

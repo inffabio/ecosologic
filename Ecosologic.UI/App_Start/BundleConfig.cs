@@ -34,9 +34,9 @@ namespace Ecosologic.UI
                                  .Include("~/Scripts/Angular/BibliotecaAngular/angular-file-upload.min.js")
                                  .Include("~/Scripts/Angular/BibliotecaAngular/loading-bar.min.js")
                                  .Include("~/Scripts/Angular/UI/ui-utils.min.js")
-                //.Include("~/Scripts/Angular/ng-scrollbar.min.js")
                                  .Include("~/Scripts/Angular/BibliotecaAngular/angucomplete-alt.js")
                                  .Include("~/Scripts/Angular/BibliotecaAngular/ui-bootstrap.js")
+                                 .Include("~/Scripts/Angular/BibliotecaAngular/ui-bootstrap-tpls.js")
                                  .Include("~/Scripts/Angular/BibliotecaAngular/angular-translate.js")
                                  .Include("~/Scripts/Angular/BibliotecaAngular/dialogs.js")
                                  .Include("~/Scripts/Angular/BibliotecaAngular/angular-materialize.js");

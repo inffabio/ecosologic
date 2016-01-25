@@ -1,7 +1,7 @@
 var appGlobal = angular.module('appGlobal', ['angularFileUpload', 'ngTouch', 'ui.grid', 'ui.grid.selection',
     'ui.grid.pagination', 'ui.grid.exporter', 'ui.grid.moveColumns', 
     'chieffancypants.loadingBar', 'cfp.loadingBarInterceptor',
-     'ui.mask', 'ngSanitize', 'angucomplete-alt', 'ui.bootstrap', 'dialogs.main', 'pascalprecht.translate', 'ui.materialize']);
+     'ui.mask', 'ngSanitize', 'angucomplete-alt', 'ui.bootstrap', 'ngAnimate', 'dialogs.main', 'pascalprecht.translate', 'ui.materialize']);
 
 appGlobal.config(['dialogsProvider', '$translateProvider', 'cfpLoadingBarProvider', function (dialogsProvider, $translateProvider, cfpLoadingBarProvider) {
 
