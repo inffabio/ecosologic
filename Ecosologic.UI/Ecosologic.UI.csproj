@@ -162,10 +162,8 @@
     <Content Include="images\casa18.jpg" />
     <Content Include="images\casa36.jpg" />
     <Content Include="images\casa9.jpg" />
-    <Content Include="images\dreamstime_m_18643725.jpg" />
-    <Content Include="images\dreamstime_m_29511724.jpg" />
-    <Content Include="images\dreamstime_m_469854444.jpg" />
-    <Content Include="images\imagem1.jpg" />
+    <Content Include="images\porquinho.jpg" />
+    <Content Include="images\slide3old.jpg" />
     <Content Include="images\loading-image-spinner.png" />
     <Content Include="images\logo-branca.png" />
     <Content Include="images\marcador1.png" />
@@ -173,6 +171,9 @@
     <Content Include="images\marcador4.png" />
     <Content Include="images\marcador5.png" />
     <Content Include="images\projeto-solar.png" />
+    <Content Include="images\slide1.jpg" />
+    <Content Include="images\slide2.jpg" />
+    <Content Include="images\slide3.jpg" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-sanitize.js" />
     <Content Include="Scripts\Angular\BibliotecaAngular\ui-bootstrap-tpls.js" />
